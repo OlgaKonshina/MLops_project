@@ -7,10 +7,7 @@ pipeline {
     }
 
     stages{
-        stage('Checkout'){
-            steps{ git 'https://github.com/OlgaKonshina/MLops_project.git'
-             }
-        }
+        
         stage('Build Docker image'){
             steps {
                 sh 'docker build -t ${DOCKER_IMAGE_NAME} .'
