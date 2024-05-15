@@ -1,9 +1,9 @@
 FROM python:3.9-slim
-user root
-# установка зависимостей
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    build-essential \
-    && rm -rf /war/lib/apt/lists/*
+USER root
+
+# Установка зависимостей
+RUN apt-get update 
+RUN apt-get install -y --no-install-recommends build-essential && rm -rf /var/lib/apt/lists/* && apt-get clean
 
 WORKDIR /app
 
@@ -13,4 +13,4 @@ RUN pip install -r requirements.txt
 
 COPY . .
 
-CMD ["streamlit", "run", "main.py","--server.port=8501", "server.address=0.0.0.0"]
+CMD ["streamlit", "run", "main.py", "--server.port=8501", "--server.address=0.0.0.0"]
