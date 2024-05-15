@@ -1,10 +1,14 @@
 torch
 torchvision
 pytest
-fastapi
-uvicorn
 httpx
 numpy
 python-multipart
 flake8
 wget
+streamlit==1.24.0
+torch
+torchvision
+torchvision.transforms
+PIL
+os
