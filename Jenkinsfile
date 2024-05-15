@@ -1,6 +1,6 @@
 pipeline{
     agent any
-    enviroment {
+    environment {
     JENKINS_HOME = "$JENKINS_HOME"
     BUILD = "${JENKINS_HOME}/workspace/style_recognition"
     }
