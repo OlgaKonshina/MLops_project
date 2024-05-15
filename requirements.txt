@@ -1,11 +1,5 @@
-torch
-torchvision
 pytest
-httpx
-numpy
-python-multipart
 flake8
-wget
 streamlit==1.24.0
 torch
 torchvision
