@@ -12,7 +12,7 @@ pipeline{
         }
         stage('Build Docker image'){
             steps {
-                sh 'docker build -t style_recognition-img .'
+                sh 'docker build -t .'
             }
         }
         stage( 'RUN Docker'){
