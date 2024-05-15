@@ -7,7 +7,7 @@ pipeline{
 
     stages{
         stage('Checkout'){
-            steps{ 'https://github.com/OlgaKonshina/MLops_project.git'
+            steps{ git 'https://github.com/OlgaKonshina/MLops_project.git'
              }
         }
         stage('Build Docker image'){
