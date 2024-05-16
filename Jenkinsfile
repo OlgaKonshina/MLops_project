@@ -13,15 +13,20 @@ pipeline {
                 sh 'docker build -t ${DOCKER_IMAGE_NAME} .'
             }
         }
+        
         stage( 'RUN Docker'){
             steps{
                 sh 'docker run -d -p 8501:8501 --name style_recognition-app ${DOCKER_IMAGE_NAME}'
-         stage( 'Install pytest'){
+            }
+        }
+
+        stage( 'Install pytest'){
             steps{
                 sh 'pip install pytest'
             }
         }
-         stage( 'RUN Test'){
+        
+        stage( 'RUN Test'){
             steps{
                 sh 'python3 -m pytest'
             }
