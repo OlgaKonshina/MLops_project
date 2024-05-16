@@ -18,5 +18,11 @@ pipeline {
                 sh 'docker run -d -p 8501:8501 --name style_recognition1-app ${DOCKER_IMAGE_NAME}'
             }
         }
+    
+        stage( 'RUN Test'){
+            steps{
+                sh 'python3 -m pytest'
+            }
+        }
     }
 }
