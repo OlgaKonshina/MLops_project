@@ -1,9 +1,6 @@
 pipeline {
     agent any
-    options {
-        // This is required if you want to clean before build
-        skipDefaultCheckout(true)
-    }
+
     environment {
         JENKINS_HOME = "$JENKINS_HOME"
         BUILD = "${JENKINS_HOME}/workspace/style_recognition1"
@@ -11,13 +8,6 @@ pipeline {
     }
 
     stages{
-        stage('Stop olg container'){
-            steps {
-                sh 'docker stop ${DOCKER_IMAGE_NAME} && docker rm ${DOCKER_IMAGE_NAME} || true'
-                sh 'docker rmi  ${DOCKER_IMAGE_NAME} || true'
-            }
-        }
-        
         stage('Build Docker image'){
             steps {
                 sh 'docker build -t ${DOCKER_IMAGE_NAME} .'
