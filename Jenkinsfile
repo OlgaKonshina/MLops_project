@@ -16,7 +16,7 @@ pipeline {
         
         stage( 'RUN Docker'){
             steps{
-                sh 'docker run -d -p 8501:8501 --name style_recognition-app ${DOCKER_IMAGE_NAME}'
+                sh 'docker run -d -p 8501:8501 --name style_recognition-app1 ${DOCKER_IMAGE_NAME}'
             }
         }
 
