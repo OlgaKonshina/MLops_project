@@ -23,12 +23,13 @@ pipeline {
         stage( 'Install pytest'){
             steps{
                 sh 'pip install pytest'
+                sh 'pip install streamlit'
             }
         }
         
         stage( 'RUN Test'){
             steps{
-                sh 'python3 -m pytest'
+                sh 'python3 -m test_main.py'
             }
         }
     }
