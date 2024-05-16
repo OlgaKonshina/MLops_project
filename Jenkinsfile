@@ -17,12 +17,7 @@ pipeline {
                 sh 'docker rmi  ${DOCKER_IMAGE_NAME} || true'
             }
         }
-        stage('CleanWS'){
-            steps {
-                cleanWs()
-                checkout scm
-            }
-        }
+        
         stage('Build Docker image'){
             steps {
                 sh 'docker build -t ${DOCKER_IMAGE_NAME} .'
