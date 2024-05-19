@@ -2,8 +2,8 @@ pipeline {
     agent any
     environment {
         JENKINS_HOME = "$JENKINS_HOME"
-        BUILD = "${JENKINS_HOME}/workspace/style_recognition1"
-        DOCKER_IMAGE_NAME = 'style_recognition1'
+        BUILD = "${JENKINS_HOME}/workspace/style_recognition5"
+        DOCKER_IMAGE_NAME = 'style_recognition5'
     }
 
     stages{
